@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import componentsX from './js/components.js'
 import directivesX from './js/directives.js'
+import initCss from './assets/init.css'
 
 Vue.config.productionTip = false;
 /* eslint-disable no-new */

@@ -2,12 +2,9 @@
   <div>
     <section class="left">
       <ul>
-        <li v-for="router in routerArr" @click="clickRouter(router.path)">
+        <li v-for="router in routerArr" v-bind:title=router.component @click="clickRouter(router.path)">
           {{router.name}}
         </li>
-        <!--<li :click="router"><a href="#/" target="_self">/</a></li>
-        <li :><a href="#/index" target="_self">/index</a></li>
-        <li><a href="#/cptCounter" target="_self">/cptCounter</a></li>-->
       </ul>
     </section>
     <div id="app">
@@ -28,7 +25,7 @@ export default {
   },
   methods:{
     clickRouter:function (str) {
-      window.location.hash = str;
+      window.location.hash = '#'+str;
     }
   }
 }

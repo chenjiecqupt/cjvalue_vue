@@ -4,7 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Index from '@/components/index'
 import CptCounter from '@/components/CptCounter'
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
   routes: [

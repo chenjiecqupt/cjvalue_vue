@@ -3,13 +3,17 @@
  */
 export default [
   {
-    name:'default',
-    path:'#/'
+    path: '/',
+    name: 'HelloWorld',
+    component: 'HelloWorld'
+  },
+  {
+    path: '/index',
+    name: 'Index',
+    component: '指令'
   },{
-    name:'index',
-    path:'#/index'
-  },{
-    name:'全局组件：cptCounter',
-    path:'#/cptCounter'
+    path:'/cptCounter',
+    name:'cptCounter',
+    component: '组件'
   }
 ]
