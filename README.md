@@ -1,6 +1,6 @@
-# my_test
+# cjvalue_vue
 
-> for learn vue
+> A Vue project
 
 ## Build Setup
 
