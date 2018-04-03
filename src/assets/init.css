@@ -17,6 +17,9 @@ pre{
 .cpt-table-save{
   position: relative;
 }
+.cpt-table-wrap{
+  padding: 10px 20px 20px 10px;
+}
 .cpt-table{
   border: 1px solid #808080;
   width: 100%;

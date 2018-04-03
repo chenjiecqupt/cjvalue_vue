@@ -15,7 +15,6 @@
 
 <script>
 import routerArr from './assets/RouterObj';
-console.log(routerArr);
 export default {
   name: 'App',
   data:function(){

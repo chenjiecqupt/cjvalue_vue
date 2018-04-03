@@ -30,17 +30,19 @@ Vue.component('cpt-counter',{
 Vue.component('cpt-table',{
   template:
   '<div class="clear">' +
-  '<div v-show="saveTable" style="text-align: left;"><button @click="saveTableEvent" class="cpt-table-save">保存表格</button></div>'+
-  '<table :class="tableClass" class="cpt-table">' +
-  '<thead :class="tHeadClass">' +
-  '<th v-for="th in tHeads" :colspan="th.col||1" :style="th.style" v-bind:title="th.name" :class="thClass">{{th.name}}</th>'+
-  '</thead>'+
-  '<tbody :class="tBodyClass">' +
-  '<tr v-for="trs in tBody" v-bind:index="trs" :class="trClass">' +
-  '<td v-for="td in trs.tds" :colspan="td.col||1" :rowspan="td.row||1" :title="td.name" v-bind:style="td.style" :class="tdClass">{{td.name}}</td>'+
-  '</tr>'+
-  '</tbody>'+
-  '</table>'+
+    '<div v-show="saveTable" style="text-align: left;"><button @click="saveTableEvent" class="cpt-table-save">保存表格</button></div>'+
+    '<div class="cpt-table-wrap">' +
+      '<table :class="tableClass" class="cpt-table">' +
+        '<thead :class="tHeadClass">' +
+          '<th v-for="th in tHeads" :colspan="th.col||1" :style="th.style" v-bind:title="th.name" :class="thClass">{{th.name}}</th>'+
+        '</thead>'+
+      '<tbody :class="tBodyClass">' +
+        '<tr v-for="trs in tBody" v-bind:index="trs" :class="trClass">' +
+          '<td v-for="td in trs.tds" :colspan="td.col||1" :rowspan="td.row||1" :title="td.name" v-bind:style="td.style" :class="tdClass">{{td.name}}</td>'+
+        '</tr>'+
+      '</tbody>'+
+      '</table>'+
+    '</div>'+
   '</div>'
   ,
   props: {
@@ -118,7 +120,7 @@ Vue.component('cpt-table',{
   },
   methods:{
     saveTableEvent:function () {
-      html2canvas(document.querySelector('.cpt-table')).then(canvas=>{
+      html2canvas(document.querySelector('.cpt-table-wrap')).then(canvas=>{
         let url = canvas.toDataURL();
         let imgDownLoad = document.createElement('a');
         imgDownLoad.setAttribute('href',url);

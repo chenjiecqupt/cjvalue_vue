@@ -2,9 +2,9 @@
     <div>
       <cpt-table :saveTable="saveTable" :tHeads="tHeadArr" :tBody="tBodyArr"></cpt-table>
       <div style="text-align: left;">
-        <code>
+        <h3>
           组件调用代码：{{code}}
-        </code>
+        </h3>
          <p>
             tHeads，tBody分别绑定表格头部和tbody数据，tHeadArr、tBodyArr为绑定的数据，
          </p>
@@ -40,73 +40,16 @@
 </template>
 
 <script>
+  import cptTableJson from './../json/cptTableJson.js'
     export default {
         data() {
-            return {
-              saveTable:true,
-              code:'<cpt-table :saveTable=false :tHeads="tHeadArr" :tBody="tBodyArr"></cpt-table>',
-              tHeadArr:[
-                {
-                  name:'表头1',
-                  col:2
-                },
-                {
-                  name:'表头2'
-                },
-                {
-                  name:'表头三'
-                }
-              ],
-              tBodyArr:[
-                {
-                  tds: [
-                    {
-                      name:'1',
-                      row:2
-                    },
-                    {
-                      name:'2',
-                      col:2,
-                      style:{
-                        color:'#00ccfb',
-                        background:'#f5f9fc'
-                      }
-                    },
-                    {
-                      name:'3',
-                    }
-                  ]
-                },
-                {
-                  tds: [
-                    {
-                      name:'1',
-                      col:1,
-                      row:1
-                    },
-                    {
-                      name:'2',
-                    },
-                    {
-                      name:'3',
-                    }
-                  ]
-                },
-                {
-                  tds:[
-                    {
-                      name:"总结",
-                      col:4,
-                      style:{
-                        background:"#f5f9fc",
-                        color: "##000002"
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
+            return cptTableJson;
+        },
+      computed:{
+        code:function () {
+          return '<cpt-table :saveTable=false :tHeads="tHeadArr" :tBody="tBodyArr"></cpt-table>';
         }
+      }
     }
 </script>
 
