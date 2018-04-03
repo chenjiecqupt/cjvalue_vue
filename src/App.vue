@@ -7,7 +7,7 @@
         </li>
       </ul>
     </section>
-    <div id="app">
+    <div id="app" class="main">
       <router-view/>
     </div>
   </div>
@@ -34,9 +34,12 @@ export default {
 <style>
 .left{
   float: left;
+  width: 24%;
+  position: relative;
+  top: 100px;
 }
 .left>ul>li{
-  width: 300px;
+  width: 60%;
   list-style: none;
   background-color: #1abc9c;
   border-top: 2px solid #999;
@@ -50,6 +53,10 @@ export default {
 }
 .left>ul>li:last-child{
   border-bottom: 2px solid #999;
+}
+.main{
+  width: 72%;
+  float: left;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

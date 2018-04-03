@@ -1,13 +1,39 @@
 ul,li{
   list-style: none;
 }
+button{
+  cursor: pointer;
+}
+p,pre{
+  text-align: left;
+}
+pre{
+  font-size: 16px;
+  line-height: 24px;
+}
+.clear{
+  clear: both;
+}
+.cpt-table-save{
+  position: relative;
+}
 .cpt-table{
+  border: 1px solid #808080;
   width: 100%;
-  border-color: #1abc9c;
+  background: #fff;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.cpt-th{
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
 }
 .cpt-td,.cpt-th{
   height: 40px;
   line-height: 40px;
+  border: 1px solid #808080;
+  text-align: center;
 }
 .cpt-tHead{
 

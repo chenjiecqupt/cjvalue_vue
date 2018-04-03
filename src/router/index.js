@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Index from '@/components/index'
 import CptCounter from '@/components/CptCounter'
-
+import CptTable from '@/components/CptTable'
 Vue.use(Router)
 
 export default new Router({
@@ -21,6 +21,10 @@ export default new Router({
       path:'/cptCounter',
       name:'cpt-counter',
       component: CptCounter
+    },{
+      path:'/CptTable',
+      name:'cpt-table',
+      component:CptTable
     }
   ]
 })

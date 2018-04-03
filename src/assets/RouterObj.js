@@ -4,8 +4,8 @@
 export default [
   {
     path: '/',
-    name: 'HelloWorld',
-    component: 'HelloWorld'
+    name: 'Hello Vue.js',
+    component: 'Hello Vue'
   },
   {
     path: '/index',
@@ -14,6 +14,10 @@ export default [
   },{
     path:'/cptCounter',
     name:'cptCounter',
+    component: '组件'
+  },{
+    path:'/cptTable',
+    name:'cptTable',
     component: '组件'
   }
 ]
