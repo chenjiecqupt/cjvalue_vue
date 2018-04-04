@@ -12,6 +12,7 @@ const dataStyle={
 };
 export default {
   saveTable:true,
+  tHeadArr:[],
   tBodyArr:[
     {
       tds: [

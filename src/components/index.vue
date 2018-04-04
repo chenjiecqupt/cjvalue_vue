@@ -12,6 +12,7 @@
       <div v-bind:id="number" v-show="number%2 == 0? true : false">
         {{number}}
       </div>
+      <img src="../assets/BUG_747_747.png" alt="">
     </div>
 </template>
 
