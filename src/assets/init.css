@@ -1,6 +1,9 @@
 ul,li{
   list-style: none;
 }
+h1,li,p,div{
+  color: #444;
+}
 button{
   cursor: pointer;
 }
