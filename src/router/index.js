@@ -4,7 +4,8 @@ import HelloWorld from '@/components/HelloWorld'
 import Index from '@/components/index'
 import CptCounter from '@/components/CptCounter'
 import CptTable from '@/components/CptTable'
-Vue.use(Router)
+import FlrDate from '@/components/FlrDate'
+Vue.use(Router);
 
 export default new Router({
   routes: [
@@ -25,6 +26,10 @@ export default new Router({
       path:'/CptTable',
       name:'cpt-table',
       component:CptTable
+    },{
+      path:'/flrDate',
+      name:'flr-date',
+      component:FlrDate
     }
   ]
 })

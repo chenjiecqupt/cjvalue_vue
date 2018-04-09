@@ -19,5 +19,9 @@ export default [
     path:'/cptTable',
     name:'cptTable',
     component: '组件'
+  },{
+    path:'/flrDate',
+    name:'flrDate',
+    component:'过滤器'
   }
 ]
