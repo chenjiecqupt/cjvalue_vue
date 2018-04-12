@@ -5,6 +5,8 @@ import Index from '@/components/index'
 import CptCounter from '@/components/CptCounter'
 import CptTable from '@/components/CptTable'
 import FlrDate from '@/components/FlrDate'
+import mockTest from '@/components/MockTest'
+
 Vue.use(Router);
 
 export default new Router({
@@ -30,6 +32,10 @@ export default new Router({
       path:'/flrDate',
       name:'flr-date',
       component:FlrDate
+    },{
+      path:'/mockTest',
+      name:'mock-test',
+      component:mockTest
     }
   ]
 })

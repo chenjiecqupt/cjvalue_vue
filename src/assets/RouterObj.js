@@ -23,5 +23,9 @@ export default [
     path:'/flrDate',
     name:'flrDate',
     component:'过滤器'
+  },{
+    path:'/mockTest',
+    name:'Mock数据测试',
+    component:'外部组件'
   }
 ]
