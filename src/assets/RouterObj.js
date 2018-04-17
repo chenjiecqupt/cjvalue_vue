@@ -27,5 +27,13 @@ export default [
     path:'/mockTest',
     name:'Mock数据测试',
     component:'外部组件'
+  },{
+    path:'/store1',
+    name:'Vuex测试1',
+    component:'外部组件'
+  },{
+    path:'/store2',
+    name:'Vuex测试2',
+    component:'外部组件'
   }
 ]

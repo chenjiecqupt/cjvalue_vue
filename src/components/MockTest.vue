@@ -12,7 +12,7 @@
             <th class="cpt-th" width="26%">证件号码</th>
           </thead>
           <tbody class="cpt-tbody">
-            <tr class="cpt-tr" v-for="person in data">
+            <tr class="cpt-tr" :Oid="person.id" v-for="person in data" @click="select(person.id)">
               <td class="cpt-td">{{person.name}}</td>
               <td class="cpt-td">{{person.age}}</td>
               <td class="cpt-td">{{person.phoneNumber}}</td>
@@ -53,10 +53,18 @@
             num += str;
           }
           return num;
+        },
+        select:(id)=>{
+          console.log('this is mock!');
+          console.log(this);
+          alert('你选择了第'+id+'条！');
+        },
+        alertX:(str,time)=>{
+
         }
       },
       beforeCreate:function () {
-        let _this = this
+        let _this = this;
         this.$axios.get('/api/data').then(res=>{
           for(let index in res.data.array){
             res.data.array[index].age =  _this.thisYear - res.data.array[index].birthday.split('-')[0];

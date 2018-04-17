@@ -6,6 +6,8 @@ import CptCounter from '@/components/CptCounter'
 import CptTable from '@/components/CptTable'
 import FlrDate from '@/components/FlrDate'
 import mockTest from '@/components/MockTest'
+import store1 from '@/components/store1'
+import store2 from '@/components/store2'
 
 Vue.use(Router);
 
@@ -36,6 +38,14 @@ export default new Router({
       path:'/mockTest',
       name:'mock-test',
       component:mockTest
+    },{
+      path:'/store1',
+      name:'store1',
+      component:store1
+    },{
+      path:'/store2',
+      name:'store2',
+      component:store2
     }
   ]
 })
