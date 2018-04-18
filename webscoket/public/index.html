@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>cjvalue_vue</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <!--<script src="./../public/jquery-1.8.0.min.js"></script>-->
+  </head>
+  <body>
+    <div id="app"></div>
+    <div>
+      <input type="text" id="input">
+      <button id="btn">发送</button>
+    </div>
+    <div id="socketDiv"></div>
+    <script>
+      var socket = io.connect('http://192.168.0.86:3008');
+      var input = document.getElementById('input');
+      var btn = document.getElementById('btn');
+      btn.addEventListener('keydown',function (event) {
+        if(event.key == 13||108){
+          value = input.value;
+          socket.emit('login',input.value);
+          input.value = '';
+        }
+      });
+      btn.addEventListener('click',function () {
+        value = input.value;
+        socket.emit('login',input.value);
+        input.value = '';
+      });
+
+      socket.on('news', function (data) {
+        console.log(data);
+        /*socket.emit('my other event', { my: 'data' });*/
+        var  p = document.createElement('P');
+
+        p.innerHTML = JSON.stringify(data);
+        document.getElementById('socketDiv').appendChild(p);
+      });
+      socket.on('login',function (data) {
+        console.log(data);
+        var  p = document.createElement('P');
+
+        var str= '<span style="font-size: 18px;display:inline-block;width: 30%">'+data.msg+'</span>';
+        str += '<span style="font-size: 12px;color: #444;">'+data.date+'</span>';
+        p.innerHTML = str;
+        document.getElementById('socketDiv').appendChild(p);
+      })
+    </script>
+  </body>
+</html>

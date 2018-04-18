@@ -21,12 +21,4 @@ Mock.mock('/api/data', (req, res) => {
       }
     ]
   })
-  /*return {
-    "list|1-10":[{
-    'name': '@cname',
-    'age|18-80':100,
-    'birthday':'@date("yyyy-MM-dd")',
-    'city':'@city(true)'
-  }]
-  }*/
-})
+});

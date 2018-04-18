@@ -22,7 +22,7 @@
       </ul>
       <div><span v-bind:style='style'>*</span>{{code}}</div>
       <ul>
-        <h1>提供以下方法：</h1>
+        <h1 class="red-start">提供以下方法：</h1>
         <li>customDateFormat：yyyy-MM-dd HH:mm:ss</li>
         <li>customHMSFormat：HH:mm:ss</li>
         <li>customYMDFormat：yyyy-MM-dd</li>

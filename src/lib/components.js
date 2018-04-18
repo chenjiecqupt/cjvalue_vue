@@ -88,7 +88,8 @@ Vue.component('cpt-table',{
                 style:{
                   background:'#eee'
                 }
-              },{
+              },
+              {
                 name:'列表3',
               }
             ]
@@ -99,13 +100,11 @@ Vue.component('cpt-table',{
               col:1,
               row:1
             },
-              {
-                name:'列表2',
-              },{
-                name:'列表3',
-              }/*,{
-                name:'列表4',
-              }*/
+            {
+              name:'列表2',
+            },{
+              name:'列表3',
+            }
             ]
           }
         ]

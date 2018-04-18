@@ -4,7 +4,7 @@
     <h1>{{ count }}</h1>
     <button @click="add">+</button>
     <button @click="reduce">-</button>
-    <p>
+    <p class="red-start">
       vuex测试2使用计算属性，count(){return this.$store.state.count;}，当触发this.$store.commit()方法时，
       计算属性会自动计算this.$store.state的数据，不需手动请求state数据，但无法进行双向数据绑定
     </p>

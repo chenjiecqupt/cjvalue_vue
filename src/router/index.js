@@ -8,6 +8,7 @@ import FlrDate from '@/components/FlrDate'
 import mockTest from '@/components/MockTest'
 import store1 from '@/components/store1'
 import store2 from '@/components/store2'
+import webSocket from '@/components/webSocket'
 
 Vue.use(Router);
 
@@ -46,6 +47,10 @@ export default new Router({
       path:'/store2',
       name:'store2',
       component:store2
+    },{
+      path:'/webSocket',
+      name:'webSocket',
+      component:webSocket
     }
   ]
 })

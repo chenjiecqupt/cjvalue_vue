@@ -23,7 +23,7 @@
           </tbody>
         </table>
       </div>
-      <h1>Mock数据调用：{{code}}</h1>
+      <h1 class="red-start">Mock数据调用：{{code}}</h1>
     </div>
 </template>
 

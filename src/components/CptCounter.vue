@@ -3,7 +3,7 @@
       <cpt-counter :counter=1></cpt-counter>
       <cpt-counter :counter=10></cpt-counter>
       <cpt-counter></cpt-counter>
-      <p>
+      <p class="red-start">
         vue组件内部双向绑定，组件之间单向绑定，所以props里面的数据为只读属性，和react一样，不能直接改变props里面的数据，否则报错
       </p>
       <pre>

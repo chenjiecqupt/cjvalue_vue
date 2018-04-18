@@ -36,11 +36,6 @@ const getDateObj =( date,fmt)=> {
     "mm": doubleNumber(new Date(date).getMinutes()),
     "ss": doubleNumber(new Date(date).getSeconds()),
   };
-  /*for(let key in DateObj){
-    let str = '/'+key+'/ig'
-    DateStr = DateStr.replace('/'+key+'/ig',DateObj[key]);
-    console.log(key,DateStr,DateObj[key])
-  }*/
   for(let key in DateObj){
     DateStr = DateStr.split(key).join(DateObj[key]);
   }

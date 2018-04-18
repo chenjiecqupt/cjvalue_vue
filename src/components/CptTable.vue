@@ -5,13 +5,13 @@
         <h3>
           组件调用代码：{{code}}
         </h3>
-         <p>
+         <p class="red-start">
             tHeads，tBody分别绑定表格头部和tbody数据，tHeadArr、tBodyArr为绑定的数据，
          </p>
-        <p>
+        <p class="red-start">
           saveTable绑定Boolean值，判定是否显示保存表格按钮，若为true，则显示，点击改按钮可将表格雷荣保存为一张jpg的图片
         </p>
-        <pre>
+        <pre class="red-start">
         tHeadArr为对象的数组数据，对象可包含:
             name:表格显示的值,String类型，例如：name:'表头'
             col:为该格横向占领表格数量，Number类型，例如：col：2（默认为1，可以不写）
