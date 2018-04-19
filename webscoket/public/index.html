@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>cjvalue_vue</title>
-    <script src="/socket.io/socket.io.js"></script>
-    <!--<script src="./../public/jquery-1.8.0.min.js"></script>-->
+    <script src="./lib/socket.io.js"></script>
+    <script src="./lib/jquery-1.8.0.min.js"></script>
   </head>
   <body>
     <div id="app"></div>
@@ -15,39 +15,56 @@
     </div>
     <div id="socketDiv"></div>
     <script>
-      var socket = io.connect('http://192.168.0.86:3008');
-      var input = document.getElementById('input');
-      var btn = document.getElementById('btn');
-      btn.addEventListener('keydown',function (event) {
-        if(event.key == 13||108){
+     $(function () {
+
+       var socket = io.connect('http://192.168.0.86:3008');
+       var input = $('#input');
+       var btn = $('#btn');
+
+       btn.click(sendFn);
+       input.keydown(function (event) {
+         if(event.keyCode === 13)sendFn();
+       });
+
+       //客户端发送信息的具体操作
+       function sendFn() {
+         if(input.val() == '') return alert('发送数据不能为空');
+         socket.emit('SendMessage',stringScript(input.val()));
+         input.val('');
+       }
+       //过滤特殊字符 <> script
+       function stringScript(s) {
+         var pattern = new RegExp("[--`~@#^*=|{}\\[\\].<>/@&*（）——|{}【]");        //格式 RegExp("[在中间定义特殊过滤字符]")
+         var rs = "";
+         for (var i = 0; i < s.length; i++) {
+           rs = rs+s.substr(i, 1).replace(pattern, '');
+         }
+         return rs;
+       }
+
+       //socket监听news事件，及socket链接后的默认发送数据
+       socket.on('news', function (data) {
+         console.log(data);
+         $('#socketDiv').append($('<p>'+JSON.stringify(data)+'</p>'));
+       });
+
+       //socket监听SendMessage事件
+       socket.on('SendMessage',function (data) {
+         console.log(data);
+         var str= '<span style="font-size: 18px;display:inline-block;width: 30%">'+data.msg+'</span>';
+         str += '<span style="font-size: 12px;color: #444;">'+data.date+'</span>';
+         var  p = $('<p></p>');
+         $('#socketDiv').append(p.html(str));
+       })
+
+     });
+      /*input.onkeydown = function (event) {
+        if(event.key == 13){
           value = input.value;
           socket.emit('login',input.value);
           input.value = '';
         }
-      });
-      btn.addEventListener('click',function () {
-        value = input.value;
-        socket.emit('login',input.value);
-        input.value = '';
-      });
-
-      socket.on('news', function (data) {
-        console.log(data);
-        /*socket.emit('my other event', { my: 'data' });*/
-        var  p = document.createElement('P');
-
-        p.innerHTML = JSON.stringify(data);
-        document.getElementById('socketDiv').appendChild(p);
-      });
-      socket.on('login',function (data) {
-        console.log(data);
-        var  p = document.createElement('P');
-
-        var str= '<span style="font-size: 18px;display:inline-block;width: 30%">'+data.msg+'</span>';
-        str += '<span style="font-size: 12px;color: #444;">'+data.date+'</span>';
-        p.innerHTML = str;
-        document.getElementById('socketDiv').appendChild(p);
-      })
+      };*/
     </script>
   </body>
 </html>
