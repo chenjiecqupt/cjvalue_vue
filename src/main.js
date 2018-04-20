@@ -10,6 +10,7 @@ import Mock from './Mock'
 import axios from 'axios'
 import store from './lib/store.js'
 
+import animate from  './assets/animate.min.css'
 import initCss from './assets/init.css'
 
 Vue.config.productionTip = false;

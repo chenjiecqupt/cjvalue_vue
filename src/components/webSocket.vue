@@ -1,6 +1,7 @@
 <template>
     <div class="webSocket">
         <h1>{{ msg }}</h1>
+      <a @click="openWebSocket(href)">链接到websocket测试</a>
       <ul>
         <li v-for="data in arr" v-html="data"></li>
       </ul>
@@ -13,11 +14,17 @@
         data() {
             return {
                 msg: 'Welcome webSocket',
+                href:'http://localhost:3008',
                 arr:[]
             }
         },
-        created:function(){
-          const url = 'ws://118.25.40.163:8088';
+      methods:{
+          openWebSocket:(url)=>{
+            window.open(url)
+          }
+      }
+        /*created:function(){
+          const url = 'ws://192.168.0.86:3008';
           const ws = new WebSocket(url);
           let arr = [];
           const _this = this;
@@ -35,7 +42,7 @@
             arr.push(e.data);
             _this.arr = arr;
             console.log(_this);
-            /*console.info('接受到数据：' + e.data);*/
+            /!*console.info('接受到数据：' + e.data);*!/
           };
           ws.onclose = function (e) {
             console.info(e);
@@ -45,7 +52,7 @@
             console.info(e);
             console.log('发生异常');
           }
-        }
+        }*/
     }
 </script>
 

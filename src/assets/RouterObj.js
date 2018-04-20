@@ -36,8 +36,12 @@ export default [
     name:'Vuex测试2',
     component:'外部组件'
   },{
-    path:'webSocket',
+    path:'/webSocket',
     name:'webSocket',
     component:'协议'
+  },{
+    path:'/test',
+    name:'test',
+    component:'test'
   }
 ]

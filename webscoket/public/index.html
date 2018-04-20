@@ -4,16 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>cjvalue_vue</title>
-    <script src="./lib/socket.io.js"></script>
-    <script src="./lib/jquery-1.8.0.min.js"></script>
+    <link rel="stylesheet" href="./stylesheets/style.css"/>
+    <link rel="stylesheet" href="./lib/bootstrap-3.3.7-dist/css/bootstrap.min.css"/>
   </head>
   <body>
     <div id="app"></div>
-    <div>
-      <input type="text" id="input">
-      <button id="btn">发送</button>
+    <div class="wrap row">
+      <div class="chatDiv col-xs-10 col-ms-10 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div id="socketDiv"></div>
+        <div class="row">
+          <textarea id="input" class="form-control" rows="4"></textarea>
+          <!--<button id="btn" class="button">发送</button>-->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button id="btn" class="btn btn-default">发送</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="socketDiv"></div>
+    <script src="./lib/socket.io.js"></script>
+    <script src="./lib/jquery.min.js"></script>
+    <script src="./lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script>
      $(function () {
 

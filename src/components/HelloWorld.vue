@@ -1,9 +1,9 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h1 :class="className">{{ msg }}</h1>
+    <h2 class="rotateInDownLeft">Essential Links</h2>
     <ul>
-      <li>
+      <li :class="className">
         <a
           href="https://vuejs.org"
           target="_blank"
@@ -88,8 +88,16 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      className:''
     }
+  },
+  mounted:function () {
+    const _this = this;
+    setTimeout(function () {
+      _this.className = 'rotateInDownLeft'
+    },20000)
+
   }
 }
 </script>

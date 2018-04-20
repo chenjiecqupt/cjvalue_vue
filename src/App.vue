@@ -7,8 +7,13 @@
         </li>
       </ul>
     </section>
-    <div id="app" class="main">
-      <router-view/>
+    <div id="app" class="main" ref="app">
+      <transition :name="transitionName">
+        <router-view/>
+      </transition>
+    </div>
+    <div class="scrollTop" ref="scrollTop">
+      <button @click="scrollTop">返回顶部</button>
     </div>
   </div>
 </template>
@@ -19,18 +24,45 @@ export default {
   name: 'App',
   data:function(){
     return {
-      routerArr:routerArr
+      routerArr:routerArr,
+      transitionName: ''
     }
   },
   methods:{
-    clickRouter:function (str) {
-      window.location.hash = '#'+str;
+    clickRouter:(str)=> window.location.hash = '#'+str,
+    scrollTop:()=>window.scrollTo(0,0)
+  },
+  computed:{
+    /*transitionName:()=>{
+      return 'slide-left'
+    }*/
+  },
+  updated:function () {
+    const _this = this;
+    this.$nextTick(function () {
+      setTimeout(function () {
+        let box = _this.$refs.app;
+        let style = window.getComputedStyle ? window.getComputedStyle(box,null) : null || box.currentStyle;
+        console.log(style.height);
+      },1000);
+    })
+  },
+  mounted:function () {
+  },
+  watch:{
+    '$route'(to,from){
+      this.transitionName = 'slide-left'
     }
   }
 }
 </script>
 
 <style>
+  .scrollTop{
+    position: fixed;
+    bottom: 20px;
+    right: 100px;
+  }
 .left{
   float: left;
   width: 24%;
@@ -64,5 +96,23 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.slide-left-enter-active, .slide-left-leave-active {
+  height: 0;
+  transition-timing-function: ease;
+  transition: transform .5s;
+  transform-origin: left;
+}
+.slide-left-enter, .slide-left-leave-active {
+  height: 0;
+  transition-timing-function: ease;
+  transform: scale(0,1);
+}
+.slide-right-enter-active, .slide-right-leave-active {
+  transition: transform .5s;
+  transform-origin: right;
+}
+.slide-right-enter, .slide-right-leave-active {
+  transform: scale(0,1);
 }
 </style>
