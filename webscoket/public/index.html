@@ -36,6 +36,7 @@
        btn.click(sendFn);
        input.keydown(function (event) {
          if(event.keyCode === 13)sendFn();
+         return false;
        });
 
        //客户端发送信息的具体操作
