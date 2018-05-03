@@ -30,11 +30,11 @@ export default [
   },{
     path:'/store1',
     name:'Vuex测试1',
-    component:'外部组件'
+    component:'vuex'
   },{
     path:'/store2',
     name:'Vuex测试2',
-    component:'外部组件'
+    component:'vuex'
   },{
     path:'/webSocket',
     name:'webSocket',

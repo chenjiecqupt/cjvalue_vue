@@ -11,7 +11,7 @@ import store2 from '@/components/store2'
 import webSocket from '@/components/websocket'
 import test from '@/components/test'
 import echarts from '@/components/echarts/index'
-import worldPopulation from '@/components/echarts/worldPopulation'
+import dailyData from '@/components/echarts/dailyData'
 
 console.log(webSocket,test);
 Vue.use(Router);
@@ -60,8 +60,8 @@ export default new Router({
       component:echarts,
       children:[
         {
-          path:'worldPopulation',
-          component:worldPopulation
+          path:'index',
+          component:dailyData
         }
       ]
     }

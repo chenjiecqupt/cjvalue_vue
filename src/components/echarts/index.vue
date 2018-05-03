@@ -3,7 +3,7 @@
       <p>{{ msg }}</p>
       <div id="pie" style="width: 600px;height:400px;display: inline-block;"></div>
       <div id="line" style="width: 600px;height: 400px;display: inline-block;"></div>
-      <router-link to="echarts/worldPopulation">worldPopulation</router-link>
+      <router-link to="echarts/index">index</router-link>
       <router-view></router-view>
     </div>
 </template>
@@ -23,10 +23,13 @@
           echarts.init(document.getElementById('pie')).setOption({
             title:{text:'随机饼状图（html,css,js）'},
             legend:{
-              selected: true
+              orient: 'vertical',
+              x: 'right',
+              data: ['html', 'css', 'js']
             },
             series : {
               type : "pie",
+              name: '前端基础',
               data:[
                 {
                   name:'html',value : parseInt(Math.random()*1000+100)
@@ -44,6 +47,9 @@
                     show: true,
                     position: 'inner',
                     formatter: '{c} ({d}%)'
+                  },
+                  labelLine:{
+                    show: false
                   }
                 }
               }
