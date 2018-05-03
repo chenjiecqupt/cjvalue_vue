@@ -10,6 +10,9 @@ import store1 from '@/components/store1'
 import store2 from '@/components/store2'
 import webSocket from '@/components/websocket'
 import test from '@/components/test'
+import echarts from '@/components/echarts/index'
+import worldPopulation from '@/components/echarts/worldPopulation'
+
 console.log(webSocket,test);
 Vue.use(Router);
 
@@ -52,9 +55,15 @@ export default new Router({
       name:'webSocket',
       component:webSocket
     },{
-      path:'/test',
-      name:'test',
-      component:test
+      path:'/echarts',
+      name:'echarts',
+      component:echarts,
+      children:[
+        {
+          path:'worldPopulation',
+          component:worldPopulation
+        }
+      ]
     }
   ],
   scrollBehavior (to, from, savedPosition) {

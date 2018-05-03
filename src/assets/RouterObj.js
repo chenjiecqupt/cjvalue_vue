@@ -40,8 +40,8 @@ export default [
     name:'webSocket',
     component:'协议'
   },{
-    path:'/test',
-    name:'test',
-    component:'test'
+    path:'/echarts',
+    name:'echarts',
+    component:'第三方组件'
   }
 ]

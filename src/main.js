@@ -9,12 +9,14 @@ import filtersX from  './lib/filters'
 import Mock from './Mock'
 import axios from 'axios'
 import store from './lib/store.js'
+import echarts from 'echarts'
 
 import animate from  './assets/animate.min.css'
 import initCss from './assets/init.css'
 
 Vue.config.productionTip = false;
 Vue.prototype.$axios = axios;
+Vue.prototype.$echarts = echarts;
 
 /* eslint-disable no-new */
 new Vue({

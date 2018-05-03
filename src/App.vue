@@ -43,7 +43,6 @@ export default {
       setTimeout(function () {
         let box = _this.$refs.app;
         let style = window.getComputedStyle ? window.getComputedStyle(box,null) : null || box.currentStyle;
-        console.log(style.height);
       },1000);
     })
   },
