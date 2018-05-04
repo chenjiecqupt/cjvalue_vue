@@ -8,5 +8,8 @@ Vue.directive('focus',{
     el.value = 'this is v-focus';
   }
 });
+/*Vue.directive('CJLink',function (el,binding) {
+
+});*/
 
 export default Vue;

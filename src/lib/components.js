@@ -131,4 +131,33 @@ Vue.component('cpt-table',{
     }
   }
 });
+Vue.component('CJLink',{
+  template:'<a @click="linkTo" :to="to" style="text-decoration: none;color: #333;">{{linkName}}</a>',
+  props:{
+    to:{
+      type: String ,
+      default: ''
+    },
+    linkName:{
+      type: String,
+      default: ''
+    }
+  },
+  /*data(){
+    /!*style:{
+      textDecoration: "none"
+    }*!/
+  },*/
+  methods:{
+    linkTo:function () {
+      /*this.to == '' ?return true : window.location.hash = '#'+this.to;*/
+      if(this.to === ''){
+        return true
+      }else{
+        window.location.hash = '#'+this.to;
+      }
+    }
+  }
+
+});
 export default Vue;

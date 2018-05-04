@@ -12,6 +12,7 @@ import webSocket from '@/components/websocket'
 import test from '@/components/test'
 import echarts from '@/components/echarts/index'
 import dailyData from '@/components/echarts/dailyData'
+import dataZoom from '@/components/echarts/dataZoom'
 
 console.log(webSocket,test);
 Vue.use(Router);
@@ -60,8 +61,16 @@ export default new Router({
       component:echarts,
       children:[
         {
+          path:'',
+          component:dailyData
+        },
+        {
           path:'index',
           component:dailyData
+        },
+        {
+          path:'dataZoom',
+          component:dataZoom
         }
       ]
     }

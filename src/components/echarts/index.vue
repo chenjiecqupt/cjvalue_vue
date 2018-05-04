@@ -4,6 +4,9 @@
       <div id="pie" style="width: 600px;height:400px;display: inline-block;"></div>
       <div id="line" style="width: 600px;height: 400px;display: inline-block;"></div>
       <router-link to="echarts/index">index</router-link>
+      <router-link to="echarts/dataZoom">dataZoom</router-link>
+      <CJLink to="echarts/index" linkName="index"></CJLink>
+      <CJLink to="echarts/dataZoom" linkName="dataZoom"></CJLink>
       <router-view></router-view>
     </div>
 </template>
