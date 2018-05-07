@@ -80,6 +80,9 @@ export default {
   text-align: left;
   text-indent: 50px;
   color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .left>ul>li:last-child{
   border-bottom: 2px solid #999;

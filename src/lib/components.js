@@ -132,7 +132,7 @@ Vue.component('cpt-table',{
   }
 });
 Vue.component('CJLink',{
-  template:'<a @click="linkTo" :to="to" style="text-decoration: none;color: #333;">{{linkName}}</a>',
+  template:'<a @click="linkTo" class="CJLink" :to="to" :style="CJstyle">{{linkName}}</a>',
   props:{
     to:{
       type: String ,
@@ -141,6 +141,12 @@ Vue.component('CJLink',{
     linkName:{
       type: String,
       default: ''
+    },
+    CJstyle:{
+      type:Object,
+      default: {
+        color: '#444'
+      }
     }
   },
   /*data(){
@@ -150,11 +156,12 @@ Vue.component('CJLink',{
   },*/
   methods:{
     linkTo:function () {
-      /*this.to == '' ?return true : window.location.hash = '#'+this.to;*/
       if(this.to === ''){
         return true
       }else{
         window.location.hash = '#'+this.to;
+        window.location.href = window.location.origin +window.location.hash
+        console.log(window.location.href)
       }
     }
   }

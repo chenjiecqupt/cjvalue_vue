@@ -1,12 +1,16 @@
 <template>
     <div class="echarts">
       <p>{{ msg }}</p>
-      <div id="pie" style="width: 600px;height:400px;display: inline-block;"></div>
-      <div id="line" style="width: 600px;height: 400px;display: inline-block;"></div>
-      <router-link to="echarts/index">index</router-link>
-      <router-link to="echarts/dataZoom">dataZoom</router-link>
-      <CJLink to="echarts/index" linkName="index"></CJLink>
-      <CJLink to="echarts/dataZoom" linkName="dataZoom"></CJLink>
+      <div id="pie" :style="style"></div>
+      <div id="line" :style="style"></div>
+      <div>
+        <button>
+          <CJLink to="echarts/index" linkName="index" :CJstyle="CJstyle"></CJLink>
+        </button>
+        <button>
+          <CJLink to="echarts/dataZoom" linkName="dataZoom" :CJstyle="CJstyle"></CJLink>
+        </button>
+      </div>
       <router-view></router-view>
     </div>
 </template>
@@ -19,8 +23,20 @@
             return {
                 msg: 'ECharts，一个使用 JavaScript 实现的开源可视化库，可以流畅的运行在 PC 和移动设备上，' +
                 '兼容当前绝大部分浏览器（IE8/9/10/11，Chrome，Firefox，Safari等），底层依赖轻量级的矢量图形库' +
-                ' ZRender，提供直观，交互丰富，可高度个性化定制的数据可视化图表。'
+                ' ZRender，提供直观，交互丰富，可高度个性化定制的数据可视化图表。',
+                CJstyle:{
+                  color: "#1abc9c"
+                }
             }
+        },
+        computed:{
+          style:function () {
+            return {
+              width: "400px",
+              height: "400px",
+              display: "inline-block"
+            }
+          }
         },
         mounted:function () {
           echarts.init(document.getElementById('pie')).setOption({
