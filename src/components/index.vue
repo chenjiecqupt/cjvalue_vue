@@ -42,8 +42,8 @@
             }
         }
     }
-    console.log(this);
-    console.log(data)
+
+    console.log(this.xx)
     /*setTimeout(function () {
       data.msg = '3000ms';
       data.xx = 'qweqwe';

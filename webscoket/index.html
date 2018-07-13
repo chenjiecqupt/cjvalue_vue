@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function Observer(data) {
+    this.data = data;
+
+    for(let key in data) {
+      if(data.hasOwnProperty(key)) {
+        let val = data[key];
+        if(typeof data[key] === "object"){
+          // 如果值不为原始类型，则继续递归
+          new Observer(val);
+        }else {
+          this.convert(key, val);
+        }
+      }
+    }
+  }
+  // 定义set 和 get函数
+  Observer.prototype.convert = function(key, val) {
+    Object.defineProperty(this.data, key, {
+      enumerable: true,
+      confingurable: true,
+      get: function() {
+        console.log(key + "被访问了");
+        return val;
+      },
+      set: function(newVal) {
+        console.log(key + "被设置了新值" + newVal);
+        val = newVal;
+      }
+    });
+  };
+  let data = {name: "xieshuai", age: 24, address: {city: "shenzheng"}};
+  let app = new Observer(data);
+
+  console.log(app.data.name);  // name被访问了
+  app.data.age = 18; // age被设置了新值18
+  app.data.ss = '';
+  app = new Observer(app.data);
+  app.data.ss = '323';
+  app.data.address.city = 'chengdu';
+
+</script>
+</body>
+</html>
