@@ -160,7 +160,7 @@ Vue.component('CJLink',{
         return true
       }else{
         window.location.hash = '#'+this.to;
-        window.location.href = window.location.origin +window.location.hash
+        window.location.href = window.location.href.split('#')[0] +window.location.hash
         console.log(window.location.href)
       }
     }

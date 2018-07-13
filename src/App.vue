@@ -2,7 +2,7 @@
   <div>
     <section class="left">
       <ul>
-        <li v-for="router in routerArr" v-bind:title=router.component @click="clickRouter(router.path)">
+        <li v-for="router in routerArr" :key="router" v-bind:title=router.component @click="clickRouter(router.path)">
           {{router.name}}
         </li>
       </ul>

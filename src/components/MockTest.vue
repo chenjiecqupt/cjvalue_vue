@@ -12,7 +12,7 @@
             <th class="cpt-th" width="26%">证件号码</th>
           </thead>
           <tbody class="cpt-tbody">
-            <tr class="cpt-tr" :Oid="person.id" v-for="person in data" @click="select(person.id)">
+            <tr class="cpt-tr" :Oid="person.id" v-for="person in data" :key="person" @click="select(person.id)">
               <td class="cpt-td">{{person.name}}</td>
               <td class="cpt-td">{{person.age}}</td>
               <td class="cpt-td">{{person.phoneNumber}}</td>
